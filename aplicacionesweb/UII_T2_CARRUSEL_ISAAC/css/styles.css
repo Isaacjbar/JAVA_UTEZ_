@@ -1,0 +1,28 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.imagenes {
+    display: flex;
+    justify-content: center;
+}
+
+.imagen {
+    display: block;
+    max-width: 200px; /* Ancho máximo para las imágenes */
+    max-height: 100px; /* Altura máxima para las imágenes */
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    margin: 0 10px;
+}
+
+.button {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
