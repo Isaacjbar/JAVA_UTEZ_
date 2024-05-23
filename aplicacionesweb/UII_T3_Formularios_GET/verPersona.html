@@ -11,6 +11,37 @@
         <!-- La información del usuario se mostrará aquí mediante JavaScript -->
     </div>
 
-    <script src="mostrarUsuario.js"></script>
+    <script>
+        // Función para obtener los parámetros del URL
+        function obtenerParametro(nombre) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        // Obtener los parámetros del URL
+        var nombres = obtenerParametro("nombres");
+        var apellidos = obtenerParametro("apellidos");
+        var correo = obtenerParametro("correo");
+        var fechaNacimiento = obtenerParametro("fechaNacimiento");
+        var telefono = obtenerParametro("telefono");
+
+        // Calcular la edad actual a partir de la fecha de nacimiento
+        var fechaNacimientoDate = new Date(fechaNacimiento);
+        var hoy = new Date();
+        var edad = hoy.getFullYear() - fechaNacimientoDate.getFullYear();
+        var mes = hoy.getMonth() - fechaNacimientoDate.getMonth();
+        if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimientoDate.getDate())) {
+            edad--;
+        }
+
+        // Mostrar la información del usuario en el documento
+        document.getElementById("infoUsuario").innerHTML = `
+            <h1>${nombres}</h1>
+            <h2>${apellidos}</h2>
+            <p>Correo: <a href="mailto:${correo}">${correo}</a></p>
+            <p>Teléfono: <a href="tel:${telefono}">${telefono}</a></p>
+            <p>Edad: ${edad}</p>
+        `;
+    </script>
 </body>
 </html>
