@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+</head>
+<body>
+    <h1>Registro de Persona</h1>
+    <form action="verPersona.html" method="GET" onsubmit="return validarFormulario()">
+        <label for="nombres">Nombres:</label><br>
+        <input type="text" id="nombres" name="nombres" required><br>
+        
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" name="apellidos" required><br>
+        
+        <label for="correo">Correo:</label><br>
+        <input type="email" id="correo" name="correo" required><br>
+        
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br>
+        
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono" required><br>
+        
+        <label for="usuario">Usuario:</label><br>
+        <input type="text" id="usuario" name="usuario" required><br>
+        
+        <label for="contrasena">Contraseña:</label><br>
+        <input type="password" id="contrasena" name="contrasena" required minlength="5"><br>
+        
+        <label for="confirmarContrasena">Repetir Contraseña:</label><br>
+        <input type="password" id="confirmarContrasena" name="confirmarContrasena" required minlength="5"><br>
+        
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <script src="validacion.js"></script>
+</body>
+</html>
