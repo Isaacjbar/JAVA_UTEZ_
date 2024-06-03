@@ -2,20 +2,20 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>formulario SolesDeLaUTEZ</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='..\..\bootstrap-5.2.3-dist'>
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <title>Page Title</title>
+    <!-- <meta name='viewport' content='width=device-width, initial-scale=1'> -->
+    <link rel='stylesheet' type='text/css' media='screen' href='boootstrap.ccs'>
     
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col"><!--Tendre el form-->
-                <form id="formulario">
+    <div class="containedor">
+        <div class="Row">
+            <div class="cool"><!--Tendre el form-->
+                <form id="formularios">
                     <div class="mb-3">
                       <label for="nombre" class="form-label">Nombre: </label>
-                      <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="ayudaNombre">
+                      <input name="nombres" type="text" class="form-control" id="nombres" aria-describedby="ayudaNombre">
                       <div id="ayudaNombre" class="form-text">Ingrese su nombre porfavor.</div>
                     </div>
                     <div class="mb-3">
@@ -41,8 +41,7 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src='js/bootstrap.js'></script>
     <script>
         let i = 2;
         let nuevo = document.getElementById("nuevo");
@@ -60,54 +59,44 @@
             input_nombre.setAttribute("class","form-control");
 
             div.appendChild(label_nombre);
-            //Para que no se muestre el input
-            //div.appendChild(input_nombre);
+            div.appendChild(input_nombre);
             document.getElementById("formulario").appendChild(div);
 
-            i++;
+            i ++ ;
         });
     </script>
     <script>
         //Script para llenar la tabla de manera dinamica
         getParameter = (key) => {
-            address = window.location.search;
+            address = window.location.search; // url de la ventana actual
+            // Objeto de tipo URLSearchParams
             parameterList = new URLSearchParams(address);
+            // Regresa el valor del parámetro “key”
             return parameterList.get(key);
         }
-
         let nombre = getParameter("nombre");
-        //Anteriormente decía matricula, pero el id y name es matri
-        let matricula = getParameter("matri");
+        let matricula = getParameter("matricula");
+
         address = window.location.search;
         parameterList = new URLSearchParams(address);
 
         //Pintar la información en la tabla
-        function pintar(nombre, matri){
+        function pintar(nombre, matricula){
             let tbody = document.getElementById("contenido");
             let row = document.createElement("tr");
             let celda1 = document.createElement("td");
             let celda2 = document.createElement("td");
             celda1.innerText = nombre;
-            //Anteriormente decía matricula, pero el id y name es matri
-            celda2.innerText = matri;
+            celda2.innerText = matricula;
             row.appendChild(celda1);
             row.appendChild(celda2);
             tbody.appendChild(row);
         }
 
-        const nombres = parameterList.getAll("nombre");
-        const matriculas = parameterList.getAll("matri");
-
-        nombres.forEach((nombre, index) => {
-            const matri = matriculas[index];
-            pintar(nombre, matri);
+        //lista se pueden iterar en un foreach
+        parameterList.forEach(parametro => {
+            pintar(parametro, "vacio")
         });
-        /*  Anterior
-            //lista se pueden iterar en un foreach
-            parameterList.forEach(parametro => {
-                pintar(parametro, "vacio")
-            });
-        */
     </script>
 </body>
 </html>
