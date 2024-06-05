@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijeras</title>
+    <link href="bootstrap-5.2.3-dist/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Juego de Piedra, Papel o Tijeras</h1>
+        <div id="game-container" class="d-flex justify-content-center mb-3">
+            <img id="player" src="" alt="Jugador" class="img-fluid mx-2">
+            <img id="machine" src="" alt="Máquina" class="img-fluid mx-2">
+        </div>
+        <div class="text-center">
+            <button onclick="playGame()" class="btn btn-primary">Jugar</button>
+        </div>
+        <div id="result" class="text-center mt-3"></div>
+    </div>
+
+    <script src="juego.js"></script>
+</body>
+</html>
+
