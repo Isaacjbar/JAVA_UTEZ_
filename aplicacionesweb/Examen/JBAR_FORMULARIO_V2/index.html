@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Mascota</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+    <h1 class="text-center">Registro de Mascota</h1>
+    <form id="registroMascota" method="GET">
+        <div class="form-group">
+            <label for="nombreMascota">Nombre de la Mascota:</label>
+            <input type="text" id="nombreMascota" name="nombre" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="tipoMascota">Tipo de Mascota:</label>
+            <input type="text" id="tipoMascota" name="tipo" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="edadMascota">Edad de la Mascota:</label>
+            <input type="number" id="edadMascota" name="edad" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="comidaFavorita">Comida Favorita:</label>
+            <input type="text" id="comidaFavorita" name="comida" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="correoDueño">Correo Electrónico del Dueño:</label>
+            <input type="email" id="correoDueño" name="correo" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+    
+    <h2 class="text-center mt-5">Lista de Mascotas</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Edad</th>
+                <th>Comida Favorita</th>
+                <th>Correo del Dueño</th>
+            </tr>
+        </thead>
+        <tbody id="listaMascotas">
+            <!-- Las mascotas registradas aparecerán aquí -->
+        </tbody>
+    </table>
+
+    <!-- Incluir el archivo JavaScript -->
+    <script src="script.js"></script>
+    <!-- Incluir Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
